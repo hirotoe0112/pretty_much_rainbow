@@ -6,13 +6,17 @@
 {% block content %}
   <div>
     <h1 class="title">Pretty Much Rainbow</h1>
+    {{ version }}
   </div>
   <div>
     This is index page.
   </div>
   <div>
-    <div class="bg-primary text-white">
-      {{ version }}
+    <div class="progress" role="progressbar" aria-label="{{ progress_name }}" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: {{ progress }}%"></div>
     </div>
+  </div>
+  <div>
+    <a href="{% url 'iss:index' %}">ISS Location</a>
   </div>
 {% endblock content %}
