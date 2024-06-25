@@ -10,12 +10,17 @@
   <!-- Random -->
   <div class="card mt-3">
     <div class="card-header menu_font">
-      らんだむ四字熟語くん
+      らんだむ四字熟語くん 漢検1級ver
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>{{ fc.name }}</p>
-        <footer class="blockquote-footer">{{ fc.meaning }}</footer>
+        <p>
+          <ruby>
+            <span class="fw-bold">{{ fc.Word }}</span>
+            <rt>{{ fc.Yomi }}</rt>
+          </ruby>
+        </p>
+        <footer class="blockquote-footer">{{ fc.Meaning }}</footer>
       </blockquote>
     </div>
   </div>
@@ -25,7 +30,7 @@
     <!-- ISS Location -->
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title menu_font">ISS Location</h5>
+        <h5 class="card-title menu_font">Where Is ISS?</h5>
         <h6 class="card-subtitle mb-2 text-body-secondary">
           <span class="badge text-bg-info">Information</span>
           <span class="badge text-bg-secondary">Simple</span>
