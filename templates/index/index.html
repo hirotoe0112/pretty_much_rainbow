@@ -1,15 +1,18 @@
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>Pretty Much Rainbow</title>
-  </head>
-  <body>
-    <h1>Pretty Much Rainbow</h1>
-    <div>
-      This is index page.
-    </div>
-    <div>
+{% extends 'base.html' %}
+
+{% block custom_css %}
+{% endblock custom_css %}
+
+{% block content %}
+  <div>
+    <h1 class="title">Pretty Much Rainbow</h1>
+  </div>
+  <div>
+    This is index page.
+  </div>
+  <div>
+    <div class="bg-primary text-white">
       {{ version }}
     </div>
-  </body>
-</html>
+  </div>
+{% endblock content %}
