@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 
 {% block custom_css %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
 {% endblock custom_css %}
 
 {% block content %}
-  <div>
-    <h2>ISS Location</h2>
+  <div class="mt-3">
+    <h2 class="menu_font">Where Is ISS?</h2>
   </div>
-  <div>
-    <iframe src="http://maps.google.co.jp/maps?q={{ latitude }},{{ longitude }}&output=embed&t=m&z=1&hl=ja" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+  <div class="mt-3">
+    <iframe src="http://maps.google.co.jp/maps?q={{ latitude }},{{ longitude }}&output=embed&t=m&z=2&hl=ja" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
   </div>
   <div>
     <a href="{% url 'index:index' %}">Back to Index</a>

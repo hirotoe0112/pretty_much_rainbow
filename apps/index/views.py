@@ -1,22 +1,20 @@
 from django.shortcuts import render
 from django.template import loader
+from django.contrib.staticfiles import finders
 import random
+import pandas
 
-fc_list = [
-    {
-        "name": "四面楚歌",
-        "meaning": "四面楚歌，形容处境危险，四面受敌。出自《史记·项羽本纪》。",
-    },
-    {
-        "name": "五里霧中",
-        "meaning": "形容事物模糊不清，不易看清。出自《史记·平原君虞卿列传》。",
-    },
-]
+def get_yojijukugo():
+    csv_file_path = finders.find("index/yojijukugo.csv")
+    csv_data = pandas.read_csv(csv_file_path)
+    dict_data = csv_data.to_dict(orient="records")
+    return random.choice(dict_data)
+
 
 
 # Create your views here.
 def index(request):
     context = {
-        "fc": random.choice(fc_list),
+        "fc": get_yojijukugo(),
     }
     return render(request, "index/index.html", context)
