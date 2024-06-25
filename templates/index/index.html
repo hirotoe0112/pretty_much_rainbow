@@ -1,22 +1,47 @@
 {% extends 'base.html' %}
 
 {% block custom_css %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
 {% endblock custom_css %}
 
 {% block content %}
-  <div>
-    <h1 class="title">Pretty Much Rainbow</h1>
-    {{ version }}
-  </div>
-  <div>
-    This is index page.
-  </div>
-  <div>
-    <div class="progress" role="progressbar" aria-label="{{ progress_name }}" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">
-      <div class="progress-bar" style="width: {{ progress }}%"></div>
+  <!-- Random -->
+  <div class="card mt-3">
+    <div class="card-header random_fc">
+      らんだむ四字熟語くん
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{ fc.name }}</p>
+        <footer class="blockquote-footer">{{ fc.meaning }}</footer>
+      </blockquote>
     </div>
   </div>
-  <div>
-    <a href="{% url 'iss:index' %}">ISS Location</a>
+
+  <!-- Menu -->
+  <div class="card-group mt-3">
+    <!-- ISS Location -->
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">ISS Location</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">
+          <span class="badge text-bg-info">Information</span>
+          <span class="badge text-bg-secondary">Simple</span>
+          <span class="badge text-bg-success">Hobby</span>
+        </h6>
+        <p class="card-text">Display the current location of the International Space Station (ISS) on a Google Map.</p>
+        <a href="{% url 'iss:index' %}"> &gt;&gt; Go</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">ISS Location</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="{% url 'iss:index' %}">ISS Location</a>
+      </div>
+    </div>
   </div>
 {% endblock content %}
