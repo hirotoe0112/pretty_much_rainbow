@@ -22,5 +22,6 @@ urlpatterns = [
     path("", include("apps.index.urls")),
     path("polls/", include("apps.polls.urls")),
     path("iss/", include("apps.iss.urls")),
+    path("words/", include("apps.words.urls")),
     path("admin/", admin.site.urls),
 ]
